@@ -18,6 +18,11 @@
 		1A26711F2A60181C004D33FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A26711E2A60181B004D33FE /* Constants.swift */; };
 		1A2671222A602204004D33FE /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2671212A602204004D33FE /* SavedViewController.swift */; };
 		1A2671242A60220E004D33FE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2671232A60220E004D33FE /* ProfileViewController.swift */; };
+		1AA774142A606CCE0026EC2D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA774132A606CCE0026EC2D /* Data.swift */; };
+		1AA774162A606CEB0026EC2D /* TopTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA774152A606CEB0026EC2D /* TopTags.swift */; };
+		1AA774192A612B640026EC2D /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA774172A612B640026EC2D /* ColorCell.swift */; };
+		1AA7741A2A612B640026EC2D /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA774182A612B640026EC2D /* ColorCell.xib */; };
+		1AA774202A614F720026EC2D /* WebsServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7741F2A614F720026EC2D /* WebsServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		1A26711E2A60181B004D33FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1A2671212A602204004D33FE /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		1A2671232A60220E004D33FE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1AA774132A606CCE0026EC2D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1AA774152A606CEB0026EC2D /* TopTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTags.swift; sourceTree = "<group>"; };
+		1AA774172A612B640026EC2D /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		1AA774182A612B640026EC2D /* ColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
+		1AA7741F2A614F720026EC2D /* WebsServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,8 @@
 		1A2671022A600AAA004D33FE /* LastFM */ = {
 			isa = PBXGroup;
 			children = (
+				1AA774212A6155A40026EC2D /* Domain */,
+				1AA774122A606CB60026EC2D /* Networking */,
 				1A2671192A600CF2004D33FE /* Home */,
 				1A2671172A600B6D004D33FE /* Application */,
 				1A2671182A600CBB004D33FE /* Login */,
@@ -73,6 +85,7 @@
 				1A26710C2A600AAD004D33FE /* Assets.xcassets */,
 				1A26710E2A600AAD004D33FE /* LaunchScreen.storyboard */,
 				1A2671112A600AAD004D33FE /* Info.plist */,
+				1AA7741B2A612BA40026EC2D /* ColorCellGroup */,
 			);
 			path = LastFM;
 			sourceTree = "<group>";
@@ -109,9 +122,51 @@
 		1A2671202A60195D004D33FE /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				1AA7741E2A614F550026EC2D /* Networking */,
 				1A26711E2A60181B004D33FE /* Constants.swift */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		1AA774122A606CB60026EC2D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1AA7741B2A612BA40026EC2D /* ColorCellGroup */ = {
+			isa = PBXGroup;
+			children = (
+				1AA774182A612B640026EC2D /* ColorCell.xib */,
+				1AA774172A612B640026EC2D /* ColorCell.swift */,
+			);
+			path = ColorCellGroup;
+			sourceTree = "<group>";
+		};
+		1AA7741E2A614F550026EC2D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1AA7741F2A614F720026EC2D /* WebsServiceManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1AA774212A6155A40026EC2D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1AA774222A6155AF0026EC2D /* Responses */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		1AA774222A6155AF0026EC2D /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				1AA774132A606CCE0026EC2D /* Data.swift */,
+				1AA774152A606CEB0026EC2D /* TopTags.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +230,7 @@
 				1A26711D2A600D11004D33FE /* TabBarController.storyboard in Resources */,
 				1A2671102A600AAD004D33FE /* LaunchScreen.storyboard in Resources */,
 				1A26710D2A600AAD004D33FE /* Assets.xcassets in Resources */,
+				1AA7741A2A612B640026EC2D /* ColorCell.xib in Resources */,
 				1A26710B2A600AAA004D33FE /* LoginViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,12 +243,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2671222A602204004D33FE /* SavedViewController.swift in Sources */,
+				1AA774202A614F720026EC2D /* WebsServiceManager.swift in Sources */,
 				1A26711F2A60181C004D33FE /* Constants.swift in Sources */,
 				1A2671082A600AAA004D33FE /* LoginViewController.swift in Sources */,
+				1AA774192A612B640026EC2D /* ColorCell.swift in Sources */,
 				1A2671042A600AAA004D33FE /* AppDelegate.swift in Sources */,
+				1AA774162A606CEB0026EC2D /* TopTags.swift in Sources */,
 				1A2671242A60220E004D33FE /* ProfileViewController.swift in Sources */,
 				1A2671062A600AAA004D33FE /* SceneDelegate.swift in Sources */,
 				1A26711B2A600D04004D33FE /* ExploreViewController.swift in Sources */,
+				1AA774142A606CCE0026EC2D /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

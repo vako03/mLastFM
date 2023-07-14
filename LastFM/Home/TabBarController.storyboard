@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,15 +16,64 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="ExploreViewController" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last fm app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qc-Cp-V3t">
+                                <rect key="frame" x="16" y="59" width="317" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hli-gJ-ciz">
+                                <rect key="frame" x="16" y="121.00000000000001" width="317" height="21.666666666666671"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="azi-b4-UQD">
+                                <rect key="frame" x="16" y="156" width="361" height="598"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MWI-ry-ytr">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Awv-65-L92">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lXJ-wg-nJz">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2qc-Cp-V3t" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="GY1-cm-W5m"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="azi-b4-UQD" secondAttribute="trailing" constant="16" id="JAU-BH-ZZ9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2qc-Cp-V3t" secondAttribute="trailing" constant="60" id="OtR-AT-lSH"/>
+                            <constraint firstItem="azi-b4-UQD" firstAttribute="top" secondItem="hli-gJ-ciz" secondAttribute="bottom" constant="13.33" id="Qwc-oj-Bz2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hli-gJ-ciz" secondAttribute="trailing" constant="60" id="R70-Eh-RDg"/>
+                            <constraint firstItem="2qc-Cp-V3t" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="YnL-5S-l9N"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="azi-b4-UQD" secondAttribute="bottom" constant="15" id="gw5-HJ-wfL"/>
+                            <constraint firstItem="hli-gJ-ciz" firstAttribute="top" secondItem="2qc-Cp-V3t" secondAttribute="bottom" constant="20" id="r8P-Vr-iuk"/>
+                            <constraint firstItem="hli-gJ-ciz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="rB5-bt-K4c"/>
+                            <constraint firstItem="azi-b4-UQD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="sOG-TX-01L"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="square.and.arrow.up.circle" catalog="system" id="TVG-6e-5y0"/>
                     <navigationItem key="navigationItem" id="XI5-Lj-OwE"/>
+                    <connections>
+                        <outlet property="collectionView" destination="azi-b4-UQD" id="AvP-RC-gyD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929" y="-394"/>
+            <point key="canvasLocation" x="2927.4809160305344" y="-394.36619718309862"/>
         </scene>
         <!--Profile-->
         <scene sceneID="b1i-Vf-NCZ">
@@ -74,6 +124,7 @@
                 <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="E7X-9h-Otz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zG6-eL-jH1">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
