@@ -18,11 +18,14 @@
 		1A26711F2A60181C004D33FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A26711E2A60181B004D33FE /* Constants.swift */; };
 		1A2671222A602204004D33FE /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2671212A602204004D33FE /* SavedViewController.swift */; };
 		1A2671242A60220E004D33FE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2671232A60220E004D33FE /* ProfileViewController.swift */; };
+		1A48F4BC2A628BC300F8BAFE /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A48F4BB2A628BC300F8BAFE /* DetailsViewController.swift */; };
 		1AA774142A606CCE0026EC2D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA774132A606CCE0026EC2D /* Data.swift */; };
 		1AA774162A606CEB0026EC2D /* TopTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA774152A606CEB0026EC2D /* TopTags.swift */; };
 		1AA774192A612B640026EC2D /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA774172A612B640026EC2D /* ColorCell.swift */; };
 		1AA7741A2A612B640026EC2D /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA774182A612B640026EC2D /* ColorCell.xib */; };
-		1AA774202A614F720026EC2D /* WebsServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7741F2A614F720026EC2D /* WebsServiceManager.swift */; };
+		1AA774282A61CD8A0026EC2D /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA774272A61CD8A0026EC2D /* WebServiceManager.swift */; };
+		1AA7742B2A61D17F0026EC2D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7742A2A61D17F0026EC2D /* DataService.swift */; };
+		1AA7742D2A6270610026EC2D /* WebServiceManager+error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7742C2A6270610026EC2D /* WebServiceManager+error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +42,14 @@
 		1A26711E2A60181B004D33FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1A2671212A602204004D33FE /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		1A2671232A60220E004D33FE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1A48F4BB2A628BC300F8BAFE /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		1AA774132A606CCE0026EC2D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		1AA774152A606CEB0026EC2D /* TopTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTags.swift; sourceTree = "<group>"; };
 		1AA774172A612B640026EC2D /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		1AA774182A612B640026EC2D /* ColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
-		1AA7741F2A614F720026EC2D /* WebsServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsServiceManager.swift; sourceTree = "<group>"; };
+		1AA774272A61CD8A0026EC2D /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		1AA7742A2A61D17F0026EC2D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		1AA7742C2A6270610026EC2D /* WebServiceManager+error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebServiceManager+error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				1AA774212A6155A40026EC2D /* Domain */,
-				1AA774122A606CB60026EC2D /* Networking */,
 				1A2671192A600CF2004D33FE /* Home */,
 				1A2671172A600B6D004D33FE /* Application */,
 				1A2671182A600CBB004D33FE /* Login */,
@@ -113,6 +118,7 @@
 			children = (
 				1A26711C2A600D11004D33FE /* TabBarController.storyboard */,
 				1A26711A2A600D04004D33FE /* ExploreViewController.swift */,
+				1A48F4BB2A628BC300F8BAFE /* DetailsViewController.swift */,
 				1A2671212A602204004D33FE /* SavedViewController.swift */,
 				1A2671232A60220E004D33FE /* ProfileViewController.swift */,
 			);
@@ -122,17 +128,11 @@
 		1A2671202A60195D004D33FE /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				1AA774292A61D16E0026EC2D /* Services */,
 				1AA7741E2A614F550026EC2D /* Networking */,
 				1A26711E2A60181B004D33FE /* Constants.swift */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		1AA774122A606CB60026EC2D /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		1AA7741B2A612BA40026EC2D /* ColorCellGroup */ = {
@@ -147,7 +147,8 @@
 		1AA7741E2A614F550026EC2D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				1AA7741F2A614F720026EC2D /* WebsServiceManager.swift */,
+				1AA774272A61CD8A0026EC2D /* WebServiceManager.swift */,
+				1AA7742C2A6270610026EC2D /* WebServiceManager+error.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -167,6 +168,14 @@
 				1AA774152A606CEB0026EC2D /* TopTags.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		1AA774292A61D16E0026EC2D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1AA7742A2A61D17F0026EC2D /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,14 +252,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2671222A602204004D33FE /* SavedViewController.swift in Sources */,
-				1AA774202A614F720026EC2D /* WebsServiceManager.swift in Sources */,
+				1AA7742D2A6270610026EC2D /* WebServiceManager+error.swift in Sources */,
 				1A26711F2A60181C004D33FE /* Constants.swift in Sources */,
 				1A2671082A600AAA004D33FE /* LoginViewController.swift in Sources */,
+				1AA7742B2A61D17F0026EC2D /* DataService.swift in Sources */,
 				1AA774192A612B640026EC2D /* ColorCell.swift in Sources */,
 				1A2671042A600AAA004D33FE /* AppDelegate.swift in Sources */,
 				1AA774162A606CEB0026EC2D /* TopTags.swift in Sources */,
 				1A2671242A60220E004D33FE /* ProfileViewController.swift in Sources */,
+				1AA774282A61CD8A0026EC2D /* WebServiceManager.swift in Sources */,
 				1A2671062A600AAA004D33FE /* SceneDelegate.swift in Sources */,
+				1A48F4BC2A628BC300F8BAFE /* DetailsViewController.swift in Sources */,
 				1A26711B2A600D04004D33FE /* ExploreViewController.swift in Sources */,
 				1AA774142A606CCE0026EC2D /* Data.swift in Sources */,
 			);
